@@ -29,6 +29,14 @@ searchBtn.addEventListener("click", () => {
   getWeather(city);
 });
 
+
+cityInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    getWeather(cityInput.value.trim());
+  }
+});
+
+
 locationBtn.addEventListener("click", () => {
   getCurrentLocation();
 });
