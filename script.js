@@ -110,10 +110,10 @@ if (condition === "Rain") {
 } else {
   document.body.className =
     "min-h-screen bg-gradient-to-br from-zinc-900 to-slate-900 text-white py-10";
-}
-  if (weather.main.temp > 40) {
-    showError("⚠ Extreme Heat Warning! Temperature is above 40°C");
   }
+  if (weather.main.temp > 40) {
+    showError("Extreme Heat Warning! Temperature is above 40°C");
+  };
 
   const currentWeather = document.getElementById("currentWeather");
 
