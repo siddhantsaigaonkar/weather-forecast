@@ -426,7 +426,6 @@ if (cities.length === 0) {
 
   recentCities.classList.remove("hidden");
   clearRecent.classList.remove("hidden");
-
   recentCities.innerHTML = '<option value="">Recent Searches</option>';
 
   cities.forEach((city) => {
@@ -436,5 +435,5 @@ if (cities.length === 0) {
       </option>
     `;
   });
-}
+};
 
