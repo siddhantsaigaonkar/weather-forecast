@@ -380,7 +380,7 @@ function getCurrentLocation() {
       console.error(error);
     },
   );
-}
+};
 
 async function getWeatherByCoords(lat, lon) {
   try {
