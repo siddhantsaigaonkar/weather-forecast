@@ -395,7 +395,7 @@ async function getWeatherByCoords(lat, lon) {
   } catch (error) {
     console.error(error);
   }
-}
+};
 
 //
 
