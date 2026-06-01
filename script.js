@@ -115,7 +115,7 @@ if (condition === "Rain") {
     showError("Extreme Heat Warning! Temperature is above 40°C");
   };
 
-  const currentWeather = document.getElementById("currentWeather");
+  const currentWeather = document.getElementById("currentWeather")
 
   currentWeather.classList.remove("hidden");
 
