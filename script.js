@@ -113,7 +113,7 @@ if (condition === "Rain") {
   }
   if (weather.main.temp > 40) {
     showError("Extreme Heat Warning! Temperature is above 40°C");
-  };
+  }
 
   const currentWeather = document.getElementById("currentWeather");
 
