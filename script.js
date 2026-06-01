@@ -87,7 +87,7 @@ async function getWeather(city) {
   } catch (error) {
     console.error(error);
   }
-}
+};
 
 function displayCurrentWeather(data) {
 
