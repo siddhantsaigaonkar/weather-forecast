@@ -66,7 +66,7 @@ function showError(message) {
   setTimeout(() => {
     errorBox.classList.add("hidden");
   }, 3000);
-}
+};
 
 async function getWeather(city) {
   try {
