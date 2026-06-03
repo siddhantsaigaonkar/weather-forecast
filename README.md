@@ -1,5 +1,9 @@
 # Weather Forecast Application
 
+## GitHub Repository
+
+https://github.com/siddhantsaigaonkar/weather-forecast
+
 ## Project Overview
 A responsive Weather Forecast Application built using HTML, JavaScript, and Tailwind CSS.
 
@@ -26,3 +30,24 @@ The application allows users to:
 
 ```bash
 git clone https://github.com/siddhantsaigaonkar/weather-forecast.git
+```
+
+2. Navigate to project folder
+
+```bash
+cd weather-forecast
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+4. Build Tailwind CSS
+
+```bash
+npm run build
+```
+
+5. Open index.html in browser
