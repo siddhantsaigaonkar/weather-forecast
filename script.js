@@ -1,7 +1,4 @@
-// const apiKey = "fbb435454ac671e7796547fd63f5b4a2";
-
 const API_KEY = "fbb435454ac671e7796547fd63f5b4a2";
-
 const cityInput = document.getElementById("cityInput");
 const searchBtn = document.getElementById("searchBtn");
 const locationBtn = document.getElementById("locationBtn");
@@ -55,7 +52,9 @@ clearRecent.addEventListener("click", () => {
   loadRecentCities();
 });
 
-// error
+
+
+// Show custom error message
 
 function showError(message) {
   const errorBox = document.getElementById("errorBox");
@@ -67,6 +66,10 @@ function showError(message) {
     errorBox.classList.add("hidden");
   }, 3000);
 };
+
+
+
+// Fetch weather data by city name
 
 async function getWeather(city) {
   try {
@@ -89,6 +92,10 @@ async function getWeather(city) {
   }
 };
 
+
+
+
+// show current weather
 function displayCurrentWeather(data) {
 
   const weather = data.list[0];
@@ -98,19 +105,39 @@ function displayCurrentWeather(data) {
   isCelsius = true;
 
   const condition = weather.weather[0].main;
-if (condition === "Rain") {
-  document.body.className =
-    "min-h-screen bg-gradient-to-br from-blue-900 to-slate-800 text-white py-10";
-} else if (condition === "Clouds") {
-  document.body.className =
-    "min-h-screen bg-gradient-to-br from-gray-700 to-gray-900 text-white py-10";
-} else if (condition === "Clear") {
-  document.body.className =
-    "min-h-screen bg-gradient-to-br from-sky-400 to-blue-700 text-white py-10";
-} else {
-  document.body.className =
-    "min-h-screen bg-gradient-to-br from-zinc-900 to-slate-900 text-white py-10";
+
+  if (condition === "Rain") {
+    document.body.style.backgroundImage =
+      "url('https://i.pinimg.com/736x/3c/0f/d6/3c0fd6fa3fedbafa0d88a5232e82c5d1.jpg')";
+  } else if (condition === "Clouds") {
+    document.body.style.backgroundImage =
+      "url('https://i.pinimg.com/1200x/01/16/41/0116415b7678b3a653feb5859b1889d4.jpg')";
+  } else if (condition === "Clear") {
+    document.body.style.backgroundImage =
+      "url('https://i.pinimg.com/1200x/01/16/41/0116415b7678b3a653feb5859b1889d4.jpg')";
+  } else if (condition === "Thunderstorm") {
+    document.body.style.backgroundImage =
+      "url('https://i.pinimg.com/736x/df/48/9c/df489c3f7037b4c06e79343709ed27c9.jpg')";
+  } else if (condition === "Snow") {
+    document.body.style.backgroundImage =
+      "url('https://i.pinimg.com/736x/e0/36/ec/e036ec9e44e38aef109fbbad98cf139a.jpg')";
+  } else if (
+    condition === "Mist" ||
+    condition === "Fog" ||
+    condition === "Haze"
+  ) {
+    document.body.style.backgroundImage =
+      "url('https://i.pinimg.com/736x/ef/86/57/ef865720ccf2636ced91eb1eaf2eab7f.jpg')";
+  } else {
+    document.body.style.backgroundImage = "none";
   }
+
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "center";
+  document.body.style.backgroundRepeat = "no-repeat";
+
+
+
   if (weather.main.temp > 40) {
     showError("Extreme Heat Warning! Temperature is above 40°C");
   }
@@ -120,13 +147,13 @@ if (condition === "Rain") {
   currentWeather.classList.remove("hidden");
 
   currentWeather.innerHTML = `
-    <div class="bg-linear-to-r from-[#020b2e] to-[#000c3f] rounded-3xl p-6 text-white">
+   <div class="bg-black/20 backdrop-blur-sm rounded-3xl p-6 text-white border border-white/10">
 
       <!-- Top -->
       <div class="flex justify-between items-start">
 
         <div>
-          <p class="text-gray-400 text-sm">
+          <p class="text-white text-sm">
             📍 ${data.city.name}, India
           </p>
 
@@ -242,6 +269,9 @@ if (condition === "Rain") {
   });
 }
 
+
+
+// Display 5-day forecast cards
 function displayForecast(data) {
   const forecastContainer = document.getElementById("forecastContainer");
 
@@ -362,6 +392,9 @@ function displayForecast(data) {
   });
 };
 
+
+
+// current location
 function getCurrentLocation() {
   if (!navigator.geolocation) {
     showError("Geolocation is not supported by your browser.");
@@ -397,8 +430,9 @@ async function getWeatherByCoords(lat, lon) {
   }
 };
 
-//
 
+
+// Store recent cities in localStorage
 function saveRecentCity(city) {
   let cities = JSON.parse(localStorage.getItem("recentCities")) || [];
 

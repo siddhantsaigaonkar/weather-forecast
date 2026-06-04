@@ -1,110 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Weather App</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
 
-  <link rel="stylesheet" href="./dist/output.css">
-</head>
+    <link rel="stylesheet" href="./dist/output.css" />
+  </head>
 
-<body class="min-h-screen bg-zinc-900 text-white py-10">
+  <body class="min-h-screen py-10">
+    <!-- Main Container -->
+
     <div class="px-4 md:px-6">
+      <div class="max-w-7xl mx-auto">
+        <!-- Application Heading -->
+        <h1 class="text-white text-center text-3xl font-bold py-4 rounded">
+          Weather Dashboard
+        </h1>
 
+        <!-- Error Message Box -->
 
-<div class="max-w-7xl mx-auto bg-slate-900/40 backdrop-blur-md">
+        <div
+          id="errorBox"
+          class="hidden fixed top-4 right-2 bg-red-600 text-white px-5 py-3 rounded-lg shadow-lg z-50"
+        ></div>
 
-  <h1 class=" text-white text-center text-3xl font-bold py-4 rounded">
-    Weather Dashboard
-</h1>
+        <div class="grid grid-cols-1 gap-5 mt-5 min-h-screen">
+          <!-- Left Side -->
+          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl shadow-xl">
 
-<div
-  id="errorBox"
-  class="hidden fixed top-4 right-2 bg-red-600 text-white px-5 py-3 rounded-lg shadow-lg z-50"
-></div>
+          <!-- City Search Input -->
 
-    <div class="grid grid-cols-1 gap-5 mt-5 min-h-screen">
-
-        <!-- Left Side -->
-        <div class="bg-linear-to-r from-[#020b2e] to-[#000c3f]  p-6 rounded-2xl shadow-xl text-white">
-
-            <h2 class="font-bold mb-3">
-                Enter a City Name
-            </h2>
+            <h2 class="font-bold mb-3 text-black">Enter a City Name</h2>
 
             <input
-                type="text"
-                id="cityInput"
-                placeholder="E.g. Pune, Mumbai"
-                class="w-full border border-zinc-600 bg-zinc-700 p-3 rounded-lg text-white placeholder-zinc-400"
-            >
+              type="text"
+              id="cityInput"
+              placeholder="E.g. Pune, Mumbai"
+              class="w-full border border-zinc-600 bg-zinc-700 p-3 rounded-lg text-white placeholder-zinc-400"
+            />
 
             <button
-                id="searchBtn"
-                class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 mt-3 rounded-lg"
+              id="searchBtn"
+              class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 mt-3 rounded-lg"
             >
-                Search
+              Search
             </button>
 
 
-<select
-    id="recentCities"
-    class="hidden w-full mt-3 p-3 rounded-lg bg-zinc-700 text-white border border-zinc-600"
->
-</select>
+            <!-- Recent Searches Dropdown -->
 
-<button
-  id="clearRecent"
-  class="hidden w-full mt-2 bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg cursor-pointer"
->
-  Clear Recent Searches
-</button>
+            <select
+              id="recentCities"
+              class="hidden w-full mt-3 p-3 rounded-lg bg-zinc-700 text-white border border-zinc-600"
+            ></select>
 
 
-            <hr class="mt-3">
-
+            <!-- Clear Recent Searches Button -->
             <button
-  id="locationBtn"
-  class="w-full bg-zinc-600 hover:bg-zinc-500 text-white py-3 mt-2 rounded-lg"
->
-  Use Current Location
-</button>
-
-        </div>
-
-        <!-- Right Side -->
-        <div class="">
-
-            <!-- Current Weather -->
-            <div
-                id="currentWeather"
-                class=" text-white rounded p-6 hidden"
+              id="clearRecent"
+              class="hidden w-full mt-2 bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg cursor-pointer"
             >
-            </div>
+              Clear Recent Searches
+            </button>
+
+            <hr class="mt-3" />
+
+
+             <!-- Current Location Button -->
+            <button
+              id="locationBtn"
+              class="w-full bg-zinc-600 hover:bg-zinc-500 text-white py-3 mt-2 rounded-lg"
+            >
+              Use Current Location
+            </button>
+          </div>
+
+          <!-- Right Side -->
+          <div class="">
+            <!-- Current Weather -->
+            <div id="currentWeather" class="rounded p-6 hidden"></div>
 
             <!-- Forecast -->
             <div class="mt-6">
+              <h2
+                class="bg-zinc-800 hover:bg-zinc-700 text-2xl font-bold mb-4 rounded-sm p-2 flex items-center justify-center text-white"
+              >
+                5-Day Forecast
+              </h2>
 
-                <h2 class="bg-zinc-800 hover:bg-zinc-700 text-2xl font-bold mb-4  rounded-sm p-2">
-                    5-Day Forecast
-                </h2>
-
-                <div
-                    id="forecastContainer"
-                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"
-                >
-                </div>
-
+              <div
+                id="forecastContainer"
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"
+              ></div>
             </div>
-
+          </div>
         </div>
-
+      </div>
     </div>
 
-</div>
-    </div>
-
-<script src="script.js"></script>
-
-</body>
+    <!-- Main JavaScript File -->
+    <script src="script.js"></script>
+  </body>
 </html>
