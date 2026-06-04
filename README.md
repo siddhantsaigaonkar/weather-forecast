@@ -7,7 +7,9 @@ https://github.com/siddhantsaigaonkar/weather-forecast
 ## Project Overview
 A responsive Weather Forecast Application built using HTML, JavaScript, and Tailwind CSS.
 
-The application allows users to:
+
+
+## Features
 - Search weather by city name
 - Get weather using current location
 - View 5-day weather forecast
@@ -23,6 +25,13 @@ The application allows users to:
 - OpenWeatherMap API
 - Local Storage
 - Git & GitHub
+
+
+## API Used
+
+OpenWeatherMap API
+
+https://openweathermap.org/api
 
 ## Installation
 
@@ -51,3 +60,8 @@ npm run build
 ```
 
 5. Open index.html in browser
+
+
+## Author
+
+Siddhant Mahesh Saigaonkar
